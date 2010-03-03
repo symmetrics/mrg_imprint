@@ -6,7 +6,7 @@
 # =============================================================================
 NAME = 'symmetrics_module_imprint'
 
-TAGS = ()
+TAGS = ('symmetrics', 'magento', 'module', 'imprint', 'impressum')
 
 LICENSE = 'AFL 3.0'
 
@@ -19,52 +19,46 @@ INSTALL_PATH = ''
 # responsibilities
 # =============================================================================
 TEAM_LEADER = {
-    '[firstname] [lastname]': '[email]',
+    'Sergej Braznikov': 'sb@symmetrics.de',
 }
 
 MAINTAINER = {
-    '[firstname] [lastname]': '[email]',
+    'Sergej Braznikov': 'sb@symmetrics.de',
 }
 
 AUTHORS = {
-    '[firstname] [lastname]': '[email]',
+    'Sergej Braznikov': 'sb@symmetrics.de',
 }
 
 # =============================================================================
 # additional infos
 # =============================================================================
-INFO = '[short description, max 60 chars]'
+INFO = 'Impressum Module'
 
 SUMMARY = '''
-    [long description
-    with multiple lines]
+    Das Modul Symmetrics_Impressum erweitert das 
+    Magento-Backend um viele Felder, die fuer die Ausgabe
+    der Seite "Impressum" wichtig sind.
 '''
 
-NOTES = '''
-    [special notes, restrictions, bugs etc.]
-'''
+NOTES = ''''''
 
 # =============================================================================
 # relations
 # =============================================================================
 REQUIRES = [
-    # {'magento': '*', 'magento_enterprise': '*'},
+    {'magento': '*', 'magento_enterprise': '*'},
 ]
 
-EXCLUDES = {
-}
+EXCLUDES = {}
 
-VIRTUAL = {
-}
+VIRTUAL = {}
 
-DEPENDS_ON_FILES = (
-    'app/code/core/.../1.php',
-    'app/code/core/.../2.php',
-    'app/code/core/.../3.php',
-)
+DEPENDS_ON_FILES = ()
 
 PEAR_KEY = ''
 
 COMPATIBLE_WITH = {
-    # 'magento': ['1.3.2', '1.3.2.1', ...],
+    'magento': ['1.4'],
+    'magento_enterprise': ['1.7'],
 }
