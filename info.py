@@ -38,7 +38,8 @@ INFO = 'Impressum Module'
 SUMMARY = '''
     Das Modul Symmetrics_Impressum erweitert das 
     Magento-Backend um viele Felder, die fuer die Ausgabe
-    der Seite "Impressum" wichtig sind.
+    der Seite "Impressum" wichtig sind. Es ersetzt alte 
+    symmetrics_impressum - Aufrufe in den E-mail templates durch neue.
 '''
 
 NOTES = ''''''

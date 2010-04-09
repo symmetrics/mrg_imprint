@@ -70,6 +70,9 @@ unter System/Konfiguration/Allgemein/Impressum
        register_number, business_rules)
 *** J: app/design/frontend/default/default/template/symmetrics/imprint/legal.phtml
        Gibt Steuerinformationen aus (tax_office, tax_number, vat_id)
+*** K: Per Migrationsdatei werden in allen E-mail Templates die durch config_german_texts 
+       erstellt werden, eventuell vorhandene symmetrics_impressum - Block Aufrufe durch Block - 
+       Aufrufe dieses imprint - Moduls ersetzt.
 
 ** TECHNINCAL
 Das Modul besteht aus 3 Block Klassen (Abstract.php, Content.php und Field.php)
@@ -258,6 +261,10 @@ Keine bekannt.
        - tax_office
        - tax_number
        - vat_id
+       
+*** K: Prüfen Sie, ob in den deutschen E-mail Templates die durch config_german_texts erstellt wurden, 
+       keine symmetrics_impressum Aufrufe mehr vorhanden sind und diese durch imprint - Aufrufe ersetzt sind.
+    
 
 ** CATCHABLE
 *** A:

@@ -16,7 +16,7 @@
  * @package   Symmetrics_Imprint
  * @author    symmetrics gmbh <info@symmetrics.de>
  * @author    Sergej Braznikov <sb@symmetrics.de>
- * @copyright 2009 Symmetrics Gmbh
+ * @copyright 2009 symmetrics gmbh
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      http://www.symmetrics.de/
  */
@@ -28,10 +28,10 @@
  * @package   Symmetrics_Imprint
  * @author    symmetrics gmbh <info@symmetrics.de>
  * @author    Sergej Braznikov <sb@symmetrics.de>
- * @copyright 2009 Symmetrics Gmbh
+ * @copyright 2009 symmetrics gmbh
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      http://www.symmetrics.de/
  */
-class Symmetrics_Imprint_Helper_Data extends Mage_Core_Helper_Abstract 
+class Symmetrics_Imprint_Helper_Data extends Mage_Core_Helper_Abstract
 {
 }

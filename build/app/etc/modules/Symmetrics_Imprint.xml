@@ -6,6 +6,7 @@
 			<codePool>community</codePool>
 			<depends>
 				<Mage_Adminhtml />
+				<Symmetrics_ConfigGermanTexts />
 			</depends>
 		</Symmetrics_Imprint>     
 	</modules>
