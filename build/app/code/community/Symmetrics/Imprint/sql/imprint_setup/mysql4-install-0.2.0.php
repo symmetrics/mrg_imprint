@@ -34,7 +34,6 @@ $select->from('core_email_template');
 // Fetches IDs of templates as an array
 $templates = $dbAdapter->fetchCol($select);
 
-
 $pattern = array(
     '{{block type="symmetrics_impressum/impressum" value="shopname"}}',
     '{{block type="symmetrics_impressum/impressum" value="email"}}',
@@ -47,16 +46,6 @@ $replace = array(
     '{{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}'
 );
 
-// $patternShopname = '{{block type="symmetrics_impressum/impressum" value="shopname"}}';
-// $replaceShopname = '{{block type="imprint/field" value="shop_name"}}';
-// 
-// $patternEmail = '{{block type="symmetrics_impressum/impressum" value="email"}}';
-// $replaceEmail = '{{block type="imprint/field" value="email"}}';
-// 
-// $patternFooter = '{{block type="symmetrics_impressum/impressum" value="emailfooter"}}';
-// $replaceFooter = '{{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}';
-
-// replaces old symmetrics_impressum calls by new imprint calls in subject and content
 foreach ($templates as $templateId) {
     $templateId = intval($templateId);
     $template = Mage::getModel('core/email_template')->load($templateId);
@@ -65,14 +54,6 @@ foreach ($templates as $templateId) {
     
     $templateSubject = str_replace($pattern, $replace, $templateSubject);
     $templateText = str_replace($pattern, $replace, $templateText);
-    
-    // $templateSubject = str_replace($patternShopname, $replaceShopname, $templateSubject);
-    // $templateSubject = str_replace($patternEmail, $replaceEmail, $templateSubject);
-    // $templateSubject = str_replace($patternFooter, $replaceFooter, $templateSubject);
-    // 
-    // $templateText = str_replace($patternShopname, $replaceShopname, $templateText);
-    // $templateText = str_replace($patternEmail, $replaceEmail, $templateText);
-    // $templateText = str_replace($patternFooter, $replaceFooter, $templateText);
 
     $template->setTemplateSubject($templateSubject)
              ->setTemplateText($templateText)
