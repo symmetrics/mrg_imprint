@@ -25,8 +25,6 @@
 $installer = $this;
 $installer->startSetup();
 
-$this->updateEmailTemplates();
-$this->updateBlocks();
-$this->updatePages();
+// todo: import values from impressum
 
 $installer->endSetup();
