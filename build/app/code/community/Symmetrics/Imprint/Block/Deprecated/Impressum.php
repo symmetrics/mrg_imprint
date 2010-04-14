@@ -23,6 +23,7 @@
  
 /**
  * This class is solely for the purpose of backwards compatibility
+ * you shouldn't rely on it as it is deprecated and will be removed in the future
  *
  * @category  Symmetrics
  * @package   Symmetrics_Imprint
@@ -40,7 +41,7 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     const IMPRINT_TEMPLATE_PATH = 'symmetrics/imprint/';
     
     /**
-     * Translation map for old to new values
+     * @var array $_fieldMap Translation map for old to new fields
      */
     protected $_fieldMap = array(
         'shopname' => 'shop_name',
@@ -58,7 +59,7 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     );
     
     /**
-     * Translation map for old to new blocks
+     * @var array $_contentMap Translation map for old to new content blocks
      */
     protected $_contentMap = array(
         'address' => 'address',
@@ -72,7 +73,11 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     /**
      * Convert old to new identifiers
      *
-     * @return string
+     * @param string $map       mapname for conversion
+     * @param string $name      identifier to convert
+     * @param bool   $checkOnly check only if entry exists for translation
+     *
+     * @return string|bool
      */
     protected function _convertIdentifier($map, $name, $checkOnly=false)
     {
@@ -80,19 +85,25 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
         $map = $this->$map;
         if (array_key_exists($name, $map)) {
             if ($checkOnly) {
+                
                 return true;
             }
+            
             return $map[$name];
         }
         
         if ($checkOnly) {
+            
             return false;
         }
+        
         return $name;
     }
     
     /**
      * Convert old to new field names
+     *
+     * @param string $name field name to convert
      *
      * @return string
      */
@@ -104,6 +115,8 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     /**
      * Convert old to new content names
      *
+     * @param string $name content block name to convert
+     *
      * @return string
      */
     protected function _convertContentName($name)
@@ -114,6 +127,8 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     /**
      * Check wether $fieldName is a content block or a field
      *
+     * @param string $name cotnent block name to check
+     *
      * @return bool
      */
     protected function _isContent($name)
@@ -123,6 +138,8 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     
     /**
      * Create Block, load template, render it and return it as string
+     *
+     * @param string $name template name to render
      *
      * @return string
      */
