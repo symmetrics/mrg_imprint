@@ -169,6 +169,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <hide_in_invoice_pdf>1</hide_in_invoice_pdf>
                         </business_rules>
                         <bank_account_owner translate="label">
                             <label>Account owner</label>

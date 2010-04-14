@@ -37,7 +37,10 @@
         <blocks>  
             <imprint>  
                 <class>Symmetrics_Imprint_Block</class>  
-            </imprint>  
+            </imprint>
+            <symmetrics_impressum>
+                <class>Symmetrics_Imprint_Block_Deprecated</class>
+            </symmetrics_impressum>
         </blocks>
         <resources>
             <imprint_setup>

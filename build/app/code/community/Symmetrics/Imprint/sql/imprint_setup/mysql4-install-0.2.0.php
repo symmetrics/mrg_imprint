@@ -25,9 +25,10 @@
 $installer = $this;
 $installer->startSetup();
 
+$prefixNew = 'general/imprint/';
+$prefixOld = 'general/impressum/';
+    
 if ($value = Mage::getStoreConfig($prefixOld . 'shopname')) {
-    $prefixNew = 'general/imprint/';
-    $prefixOld = 'general/impressum/';
     $installer->moveConfigData($prefixNew . 'shop_name', $prefixOld . 'shopname');
     $installer->moveConfigData($prefixNew . 'company_first', $prefixOld . 'company1');
     $installer->moveConfigData($prefixNew . 'company_second', $prefixOld . 'company2');
