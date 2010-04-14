@@ -33,5 +33,19 @@
  * @link      http://www.symmetrics.de/
  */
 class Symmetrics_Imprint_Model_Setup extends Mage_Eav_Model_Entity_Setup
-{
+{    
+    /**
+     * Copy store config data
+     * 
+     * @param string $newPath new config path
+     * @param string $oldPath old config path
+     * 
+     * @return void
+     */
+    public function moveConfigData($newPath, $oldPath)
+    {
+        if ($value = Mage::getStoreConfig($oldPath)) {
+            Mage::setStoreConfig($newPath, $value);
+        }
+    }
 }
