@@ -25,39 +25,8 @@
 $installer = $this;
 $installer->startSetup();
 
-/* @var $dbAdapter Varien_Db_Adapter_Pdo_Mysql */
-$dbAdapter = $installer->getConnection();
-/* @var $select Varien_Db_Adapter_Pdo_Mysql */
-$select = $dbAdapter->select();
-$select->from('core_email_template');
+$this->updateEmailTemplates();
+$this->updateBlocks();
+$this->updatePages();
 
-// Fetches IDs of templates as an array
-$templates = $dbAdapter->fetchCol($select);
-
-$pattern = array(
-    '{{block type="symmetrics_impressum/impressum" value="shopname"}}',
-    '{{block type="symmetrics_impressum/impressum" value="email"}}',
-    '{{block type="symmetrics_impressum/impressum" value="emailfooter"}}'
-);
-
-$replace = array(
-    '{{block type="imprint/field" value="shop_name"}}',
-    '{{block type="imprint/field" value="email"}}',
-    '{{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}'
-);
-
-foreach ($templates as $templateId) {
-    $templateId = intval($templateId);
-    $template = Mage::getModel('core/email_template')->load($templateId);
-    $templateText = $template->getTemplateText();
-    $templateSubject = $template->getTemplateSubject();
-    
-    $templateSubject = str_replace($pattern, $replace, $templateSubject);
-    $templateText = str_replace($pattern, $replace, $templateText);
-
-    $template->setTemplateSubject($templateSubject)
-             ->setTemplateText($templateText)
-             ->setModifiedAt(new Zend_Db_Expr('NOW()'))
-             ->save();
-}
 $installer->endSetup();
