@@ -69,6 +69,61 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
         'tax' => 'tax',
         'emailfooter' => 'email/footer'
     );
+    
+    /**
+     * @var array $_removedContentMap Translation map for deprecated blocks
+     */
+    protected $_removedContentMap = array(
+        'web_href' => 'oldWeb',
+        'email_href' => 'oldEmail',
+        'imprint' => 'oldImprint',
+        'imprintplain' => 'oldImprintPlain'
+    );
+    
+    /**
+     * Return deprecated blocks
+     *
+     * @param string $name block name
+     *
+     * @return string
+     */
+    protected function _getOldBlock($name)
+    {
+        if ($name == 'oldWeb') {
+            $value = '<a href="http://' . $this->getData('web') . '" title="' .
+                    $this->getData('company_first') . '">' . $this->getData('web') . '</a>';
+        } elseif ($name == 'oldEmail') {
+            $value = '<a href="mailto:' . $this->getData('email') . '" title="' .
+                    $this->getData('company_first') . '">' . $this->getData('email') . '</a>';
+        } elseif ($name == 'oldImprint') {
+            $value = $this->_getOldImprintBlock();
+        } elseif ($name == 'oldImprintPlain') {
+            $value = $this->_getOldImprintBlock(true);
+        }
+        
+        return $value;
+    }
+    
+    /**
+     * Generate imprint block with all data
+     *
+     * @param bool $stripTags remove html tags
+     * 
+     * @return string
+     */
+    protected function _getOldImprintBlock($stripTags = false)
+    {
+        $value = $this->_renderTemplateAsString('email/footer');
+        $value .= $this->_renderTemplateAsString('tax');
+        $value .= $this->_renderTemplateAsString('legal');
+        $value .= $this->_renderTemplateAsString('bank');
+        
+        if ($stripTags) {
+            strip_tags($value);
+        }
+        
+        return $value;
+    }
 
     /**
      * Convert old to new identifiers
@@ -113,6 +168,18 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     }
     
     /**
+     * Convert old deprecated block names
+     *
+     * @param string $name block name to convert
+     *
+     * @return string
+     */
+    protected function _convertOldName($name)
+    {
+        return $this->_convertIdentifier('removedContent', $name);
+    }
+    
+    /**
      * Convert old to new content names
      *
      * @param string $name content block name to convert
@@ -134,6 +201,18 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     protected function _isContent($name)
     {
         return $this->_convertIdentifier('content', $name, true);
+    }
+        
+    /**
+     * Check wether $fieldName is a content block or a field
+     *
+     * @param string $name cotnent block name to check
+     *
+     * @return bool
+     */
+    protected function _isOldContent($name)
+    {
+        return $this->_convertIdentifier('removedContent', $name, true);
     }
     
     /**
@@ -163,6 +242,9 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
         if ($this->_isContent($value)) {
             
             return $this->_renderTemplateAsString($this->_convertContentName($value));
+        } elseif ($this->_isOldContent($value)) {
+            
+            return $this->_getOldBlock($this->_convertOldName($value));
         } else {
             
             return $this->getData($this->_convertFieldName($value));
