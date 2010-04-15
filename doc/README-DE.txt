@@ -260,7 +260,43 @@ Keine bekannt.
        - tax_number
        - vat_id
        
-*** K: 
+*** K: Erstellen Sie eine CMS Seite mit folgendem Inhalt und prüfen Sie, ob alle
+        in der Konfiguration hinterlegten Felder richtig ausgegeben werden:
+        
+            <hr/> {{block type="symmetrics_impressum/impressum" value="shopname"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="company1"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="company2"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="street"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="zip"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="city"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="telephone"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="fax"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="email"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="web"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="taxnumber"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="vatid"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="court"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="taxoffice"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="ceo"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="hrb"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="legal"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bankaccountowner"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bankaccount"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bankcodenumber"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bankname"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="swift"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="iban"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bank"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="emailfooter"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="address"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="communication"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="legal"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="tax"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bank"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="web_href"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="email_href"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="imprint"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="imprintplain"}}
 
 ** CATCHABLE
 
