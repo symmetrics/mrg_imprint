@@ -119,7 +119,7 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
         $value .= $this->_renderTemplateAsString('bank');
         
         if ($stripTags) {
-            strip_tags($value);
+            $value = strip_tags($value);
         }
         
         return $value;
