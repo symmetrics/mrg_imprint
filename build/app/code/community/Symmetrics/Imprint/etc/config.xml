@@ -46,7 +46,7 @@
             <imprint_setup>
                 <setup>
                     <module>Symmetrics_Imprint</module>
-                    <class>Symmetrics_Imprint_Model_Setup</class>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
                 </setup>
                 <connection>
                     <use>core_setup</use>

@@ -29,29 +29,38 @@ $prefixNew = 'general/imprint/';
 $prefixOld = 'general/impressum/';
     
 if ($value = Mage::getStoreConfig($prefixOld . 'shopname')) {
-    $installer->moveConfigData($prefixNew . 'shop_name', $prefixOld . 'shopname');
-    $installer->moveConfigData($prefixNew . 'company_first', $prefixOld . 'company1');
-    $installer->moveConfigData($prefixNew . 'company_second', $prefixOld . 'company2');
-    $installer->moveConfigData($prefixNew . 'street', $prefixOld . 'street');
-    $installer->moveConfigData($prefixNew . 'zip', $prefixOld . 'zip');
-    $installer->moveConfigData($prefixNew . 'city', $prefixOld . 'city');
-    $installer->moveConfigData($prefixNew . 'telephone', $prefixOld . 'telephone');
-    $installer->moveConfigData($prefixNew . 'fax', $prefixOld . 'fax');
-    $installer->moveConfigData($prefixNew . 'email', $prefixOld . 'email');
-    $installer->moveConfigData($prefixNew . 'web', $prefixOld . 'web');
-    $installer->moveConfigData($prefixNew . 'tax_number', $prefixOld . 'taxnumber');
-    $installer->moveConfigData($prefixNew . 'vat_id', $prefixOld . 'vatid');
-    $installer->moveConfigData($prefixNew . 'court', $prefixOld . 'court');
-    $installer->moveConfigData($prefixNew . 'financial_office', $prefixOld . 'taxoffice');
-    $installer->moveConfigData($prefixNew . 'ceo', $prefixOld . 'ceo');
-    $installer->moveConfigData($prefixNew . 'register_number', $prefixOld . 'hrb');
-    $installer->moveConfigData($prefixNew . 'bank_account', $prefixOld . 'bankaccount');
-    $installer->moveConfigData($prefixNew . 'bank_code_number', $prefixOld . 'bankcodenumber');
-    $installer->moveConfigData($prefixNew . 'bank_account_owner', $prefixOld . 'bankaccountowner');
-    $installer->moveConfigData($prefixNew . 'bank_name', $prefixOld . 'bankname');
-    $installer->moveConfigData($prefixNew . 'swift', $prefixOld . 'swift');
-    $installer->moveConfigData($prefixNew . 'iban', $prefixOld . 'iban');
-    $installer->moveConfigData($prefixNew . 'business_rules', $prefixOld . 'rechtlicheregelungen');
+    $configMap = array(
+        'shop_name' => 'shopname',
+        'company_first' => 'company1',
+        'company_second' => 'company2',
+        'street' => 'street',
+        'zip' => 'zip',
+        'city' => 'city',
+        'telephone' => 'telephone',
+        'fax' => 'fax',
+        'email' => 'email',
+        'web' => 'web',
+        'tax_number' => 'taxnumber',
+        'vat_id' => 'vatid',
+        'court' => 'court',
+        'financial_office' => 'taxoffice',
+        'ceo' => 'ceo',
+        'register_number' => 'hrb',
+        'bank_account' => 'bankaccount',
+        'bank_code_number' => 'bankcodenumber',
+        'bank_account_owner' => 'bankaccountowner',
+        'bank_name' => 'bankname',
+        'swift' => 'swift',
+        'iban' => 'iban',
+        'business_rules' => 'rechtlicheregelungen'
+    )
+    foreach ($configMap as $newPath => $oldPath) {
+        
+        if ($value = Mage::getStoreConfig($oldPath)) {
+            Mage::setStoreConfig($prefixNew . $newPath, $prefixOld . $value);
+        }
+    }
+
 }
 
 $installer->endSetup();
