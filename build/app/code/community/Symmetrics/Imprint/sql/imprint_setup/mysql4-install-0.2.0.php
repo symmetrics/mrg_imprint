@@ -28,39 +28,37 @@ $installer->startSetup();
 $prefixNew = 'general/imprint/';
 $prefixOld = 'general/impressum/';
     
-if ($value = Mage::getStoreConfig($prefixOld . 'shopname')) {
-    $configMap = array(
-        'shop_name' => 'shopname',
-        'company_first' => 'company1',
-        'company_second' => 'company2',
-        'street' => 'street',
-        'zip' => 'zip',
-        'city' => 'city',
-        'telephone' => 'telephone',
-        'fax' => 'fax',
-        'email' => 'email',
-        'web' => 'web',
-        'tax_number' => 'taxnumber',
-        'vat_id' => 'vatid',
-        'court' => 'court',
-        'financial_office' => 'taxoffice',
-        'ceo' => 'ceo',
-        'register_number' => 'hrb',
-        'bank_account' => 'bankaccount',
-        'bank_code_number' => 'bankcodenumber',
-        'bank_account_owner' => 'bankaccountowner',
-        'bank_name' => 'bankname',
-        'swift' => 'swift',
-        'iban' => 'iban',
-        'business_rules' => 'rechtlicheregelungen'
-    );
-    foreach ($configMap as $newPath => $oldPath) {
-        
-        if ($value = Mage::getStoreConfig($oldPath)) {
-            Mage::setStoreConfig($prefixNew . $newPath, $prefixOld . $value);
-        }
-    }
+$configMap = array (
+    'shop_name' => 'shopname',
+    'company_first' => 'company1',
+    'company_second' => 'company2',
+    'street' => 'street',
+    'zip' => 'zip',
+    'city' => 'city',
+    'telephone' => 'telephone',
+    'fax' => 'fax',
+    'email' => 'email',
+    'web' => 'web',
+    'tax_number' => 'taxnumber',
+    'vat_id' => 'vatid',
+    'court' => 'court',
+    'financial_office' => 'taxoffice',
+    'ceo' => 'ceo',
+    'register_number' => 'hrb',
+    'bank_account' => 'bankaccount',
+    'bank_code_number' => 'bankcodenumber',
+    'bank_account_owner' => 'bankaccountowner',
+    'bank_name' => 'bankname',
+    'swift' => 'swift',
+    'iban' => 'iban',
+    'business_rules' => 'rechtlicheregelungen'
+);
 
+foreach ($configMap as $oldPath => $newPath) {
+    if ($value = Mage::getStoreConfig($prefixOld . $oldPath)) {
+        Mage::setStoreConfig($prefixNew . $newPath, $value);
+    }
 }
+
 
 $installer->endSetup();
