@@ -6,7 +6,7 @@
 # =============================================================================
 NAME = 'symmetrics_module_imprint'
 
-TAGS = ('symmetrics', 'magento', 'module', 'imprint', 'impressum')
+TAGS = ('symmetrics', 'magento', 'module', 'imprint', 'impressum', 'mrg')
 
 LICENSE = 'AFL 3.0'
 
