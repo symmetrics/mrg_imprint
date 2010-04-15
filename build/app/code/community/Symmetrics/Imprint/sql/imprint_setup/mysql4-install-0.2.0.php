@@ -53,7 +53,7 @@ if ($value = Mage::getStoreConfig($prefixOld . 'shopname')) {
         'swift' => 'swift',
         'iban' => 'iban',
         'business_rules' => 'rechtlicheregelungen'
-    )
+    );
     foreach ($configMap as $newPath => $oldPath) {
         
         if ($value = Mage::getStoreConfig($oldPath)) {
