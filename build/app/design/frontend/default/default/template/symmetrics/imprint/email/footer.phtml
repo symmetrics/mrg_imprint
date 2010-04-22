@@ -47,6 +47,16 @@
 </p>
 
 <p>
+    <?php echo $this->__('Financial office') ?>: <?php echo $this->getFinancialOffice() ?><br />
+    <?php if (strlen(trim($this->getTaxNumber())) > 0): ?>
+        <?php echo $this->__('Tax number') ?>: <?php echo $this->getTaxNumber() ?><br />
+    <?php endif ?>
+    <?php if (strlen(trim($this->getVatId())) > 0): ?>
+        <?php echo $this->__('VAT-ID') ?>: <?php echo $this->getVatId() ?>
+    <?php endif ?>
+</p>
+
+<p>
     <?php echo $this->__('CEO') ?>: <?php echo $this->getCeo() ?><br />
     <?php echo $this->__('Register court') ?>: <?php echo $this->getCourt() ?><br />
     <?php if (strlen(trim($this->getRegisterNumber())) > 0): ?>
@@ -54,5 +64,18 @@
     <?php endif ?>
     <?php if (strlen(trim($this->getBusinessRules())) > 0): ?>
         <?php echo $this->__('Reference for business rules') ?>: <?php echo $this->getBusinessRules() ?>
+    <?php endif ?>
+</p>
+
+<p>
+    <?php echo $this->__('Account owner') ?>: <?php echo $this->getBankAccountOwner() ?><br />
+    <?php echo $this->__('Account') ?>: <?php echo $this->getBankAccount() ?><br />
+    <?php echo $this->__('Bank number') ?>: <?php echo $this->getBankCodeNumber() ?><br />
+    <?php echo $this->__('Bank name') ?>: <?php echo $this->getBankName() ?><br />
+    <?php if (strlen(trim($this->getSwift())) > 0): ?>
+        <?php echo $this->__('SWIFT') ?>: <?php echo $this->getSwift() ?><br />
+    <?php endif ?>
+    <?php if (strlen(trim($this->getIban())) > 0): ?>
+        <?php echo $this->__('IBAN') ?>: <?php echo $this->getIban() ?><br />
     <?php endif ?>
 </p>
