@@ -91,10 +91,10 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     {
         if ($name == 'oldWeb') {
             $value = '<a href="http://' . $this->getData('web') . '" title="' .
-                    $this->getData('company_first') . '">' . $this->getData('web') . '</a>';
+                $this->getData('company_first') . '">' . $this->getData('web') . '</a>';
         } elseif ($name == 'oldEmail') {
             $value = '<a href="mailto:' . $this->getData('email') . '" title="' .
-                    $this->getData('company_first') . '">' . $this->getData('email') . '</a>';
+                $this->getData('company_first') . '">' . $this->getData('email') . '</a>';
         } elseif ($name == 'oldImprint') {
             $value = $this->_getOldImprintBlock();
         } elseif ($name == 'oldImprintPlain') {
@@ -138,9 +138,9 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
     {
         $map = '_' . $map . 'Map';
         $map = $this->$map;
+
         if (array_key_exists($name, $map)) {
             if ($checkOnly) {
-                
                 return true;
             }
             
@@ -148,7 +148,6 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
         }
         
         if ($checkOnly) {
-            
             return false;
         }
         
@@ -240,13 +239,10 @@ class Symmetrics_Imprint_Block_Deprecated_Impressum extends Symmetrics_Imprint_B
         $value = $this->getValue();
         
         if ($this->_isContent($value)) {
-            
             return $this->_renderTemplateAsString($this->_convertContentName($value));
         } elseif ($this->_isOldContent($value)) {
-            
             return $this->_getOldBlock($this->_convertOldName($value));
         } else {
-            
             return $this->getData($this->_convertFieldName($value));
         }
     }

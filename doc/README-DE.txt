@@ -72,7 +72,7 @@ unter System/Konfiguration/Allgemein/Impressum
        Gibt Steuerinformationen aus (tax_office, tax_number, vat_id)
 *** K: Das Modul bietet eine Abwärtskompatibilität zu den alten Impressum-Aufrufen
 
-** TECHNINCAL
+** TECHNICAL
 Das Modul besteht aus 3 Block Klassen (Abstract.php, Content.php und Field.php)
 und 6 Templates mit vordefinierten Felder. Die Einstellungsfelder in
 System/Konfiguration werden ueber die system.xml angelegt.
@@ -88,7 +88,7 @@ Für die Ausgabe ist die Methode _toHtml() zuständig.
 um die Templates wie z.B. address.phtml zu rendern.
 
 ** PROBLEMS
-Keine bekannt.
+Keine Probleme bekannt.
 
 * TESTCASES
 
@@ -297,7 +297,3 @@ Keine bekannt.
             <hr/> {{block type="symmetrics_impressum/impressum" value="email_href"}}'
             <hr/> {{block type="symmetrics_impressum/impressum" value="imprint"}}'
             <hr/> {{block type="symmetrics_impressum/impressum" value="imprintplain"}}
-
-** CATCHABLE
-
-** STRESS

@@ -60,5 +60,4 @@ foreach ($configMap as $oldPath => $newPath) {
     }
 }
 
-
 $installer->endSetup();
