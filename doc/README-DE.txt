@@ -126,6 +126,7 @@ Keine Probleme bekannt.
         - app/design/frontend/default/default/template/symmetrics/imprint/communication.phtml
         - app/design/frontend/default/default/template/symmetrics/imprint/email/footer.phtml
         - app/design/frontend/default/default/template/symmetrics/imprint/legal.phtml
+        - app/design/frontend/default/default/template/symmetrics/imprint/tax.phtml
 
 *** C: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
        Inhalt:
