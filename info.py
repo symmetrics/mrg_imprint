@@ -19,15 +19,16 @@ INSTALL_PATH = ''
 # responsibilities
 # =============================================================================
 TEAM_LEADER = {
-    'Sergej Braznikov': 'sb@symmetrics.de',
+    'Torsten Walluhn': 'tw@symmetrics.de',
 }
 
 MAINTAINER = {
-    'Sergej Braznikov': 'sb@symmetrics.de',
+    'Yauhen Yakimovich': 'yy@symmetrics.de',
 }
 
 AUTHORS = {
     'Sergej Braznikov': 'sb@symmetrics.de',
+    'Yauhen Yakimovich': 'yy@symmetrics.de',
 }
 
 # =============================================================================
@@ -36,9 +37,9 @@ AUTHORS = {
 INFO = 'Impressum Module'
 
 SUMMARY = '''
-    Das Modul Symmetrics_Impressum erweitert das 
+    Das Modul Symmetrics_Impressum erweitert das
     Magento-Backend um viele Felder, die fuer die Ausgabe
-    der Seite "Impressum" wichtig sind. Es ersetzt alte 
+    der Seite "Impressum" wichtig sind. Es ersetzt alte
     symmetrics_impressum - Aufrufe in den E-mail templates durch neue.
 '''
 
@@ -60,6 +61,6 @@ DEPENDS_ON_FILES = ()
 PEAR_KEY = ''
 
 COMPATIBLE_WITH = {
-    'magento': ['1.4'],
-    'magento_enterprise': ['1.7'],
+    'magento': ['1.4.0.1'],
+    'magento_enterprise': ['1.8.0.0'],
 }
