@@ -25,7 +25,7 @@
 <config>
     <modules>
         <Symmetrics_Imprint>
-            <version>0.2.11</version>
+            <version>0.2.13</version>
         </Symmetrics_Imprint>
     </modules>
     <global>
