@@ -54,7 +54,7 @@ $configMap = array (
     'business_rules' => 'rechtlicheregelungen'
 );
 
-foreach ($configMap as $oldPath => $newPath) {
+foreach ($configMap as $newPath => $oldPath) {
     if ($value = Mage::getStoreConfig($prefixOld . $oldPath)) {
         $installer->setConfigData($prefixNew . $newPath, $value);
     }
