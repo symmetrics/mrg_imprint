@@ -56,7 +56,7 @@ $configMap = array (
 
 foreach ($configMap as $oldPath => $newPath) {
     if ($value = Mage::getStoreConfig($prefixOld . $oldPath)) {
-        Mage::setStoreConfig($prefixNew . $newPath, $value);
+        $installer->setConfigData($prefixNew . $newPath, $value);
     }
 }
 
