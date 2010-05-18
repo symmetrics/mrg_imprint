@@ -73,8 +73,8 @@ unter System/Konfiguration/Allgemein/Impressum
 *** K: Das Modul bietet eine Abwärtskompatibilität zu den alten Impressum-Aufrufen
 
 ** TECHNICAL
-Das Modul besteht aus 3 Block Klassen (Abstract.php, Content.php und Field.php)
-und 6 Templates mit vordefinierten Felder. Die Einstellungsfelder in
+Das Modul besteht aus 3 Block-Klassen (Abstract.php, Content.php und Field.php)
+und 6 Templates mit vordefinierten Feldern. Die Einstellungsfelder in
 System/Konfiguration werden ueber die system.xml angelegt.
 
 - Symmetrics_Imprint_Block_Abstract ist eine Abstrakte Klasse und bietet die
@@ -84,8 +84,7 @@ Daten aus System/Konfiguration/Allgemein/Impressum an.
 Impressum-Feld. Der Befehl dazu lautet {{block type="imprint/field" value="[field_name]"}}.
 Für die Ausgabe ist die Methode _toHtml() zuständig.
 
-- Symmetrics_Imprint_Block_Content ist eine leere Klasse, die nur dafür da ist
-um die Templates wie z.B. address.phtml zu rendern.
+- Symmetrics_Imprint_Block_Content ist eine leere Klasse, die nur dafür da ist die Templates wie z.B. address.phtml zu rendern.
 
 ** PROBLEMS
 Keine Probleme bekannt.
@@ -94,7 +93,7 @@ Keine Probleme bekannt.
 
 ** BASIC
 *** A: Prüfen Sie, ob im Backend unter System/Konfiguration/Allgemein/
-       ein neue Felgruppe "Impressum" angezeigt wird. Folgende Felder werden
+       eine neue Felgruppe "Impressum" angezeigt wird. Folgende Felder werden
        angezeigt: 
             - Shop Name (shop_name)
             - Firma 1 (company_first)
@@ -128,7 +127,7 @@ Keine Probleme bekannt.
         - app/design/frontend/default/default/template/symmetrics/imprint/legal.phtml
         - app/design/frontend/default/default/template/symmetrics/imprint/tax.phtml
 
-*** C: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
+*** C: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
        shop_name: {{block type="imprint/field" value="shop_name"}}
@@ -157,7 +156,7 @@ Keine Probleme bekannt.
        
        Prüfen Sie ob alle in der Konfiguration hinterlegte Felder richtig ausgegeben werden.
 
-*** D: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
+*** D: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
        address
@@ -180,7 +179,7 @@ Keine Probleme bekannt.
 
        Prüfen Sie ob alle in der Konfiguration hinterlegte Felder richtig ausgegeben werden.
 
-*** E: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
+*** E: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
        {{block type="imprint/content" template="symmetrics/imprint/address.phtml"}}
@@ -193,7 +192,7 @@ Keine Probleme bekannt.
        - zip
        - city
 
-*** F: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
+*** F: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
        {{block type="imprint/content" template="symmetrics/imprint/bank.phtml"}}
@@ -207,7 +206,7 @@ Keine Probleme bekannt.
        - swift
        - iban
 
-*** G: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
+*** G: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
        {{block type="imprint/content" template="symmetrics/imprint/communication.phtml"}}
@@ -219,7 +218,7 @@ Keine Probleme bekannt.
        - web
        - email
 
-*** H: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
+*** H: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
        {{block type="imprint/content" template="symmetrics/imprint/email/footer.phtml"}}
@@ -237,7 +236,7 @@ Keine Probleme bekannt.
        - web
        - email
 
-*** I: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
+*** I: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
        {{block type="imprint/content" template="symmetrics/imprint/legal.phtml"}}
@@ -249,7 +248,7 @@ Keine Probleme bekannt.
        - register_number
        - business_rules
 
-*** J: Erstellen Sie eine neue CMS Seite oder einen statischen Block mit folgendem
+*** J: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
        {{block type="imprint/content" template="symmetrics/imprint/tax.phtml"}}
@@ -260,7 +259,7 @@ Keine Probleme bekannt.
        - tax_number
        - vat_id
        
-*** K: Erstellen Sie eine CMS Seite mit folgendem Inhalt und prüfen Sie, ob alle
+*** K: Erstellen Sie eine CMS-Seite mit folgendem Inhalt und prüfen Sie, ob alle
         in der Konfiguration hinterlegten Felder richtig ausgegeben werden:
         
             <hr/> {{block type="symmetrics_impressum/impressum" value="shopname"}}'
