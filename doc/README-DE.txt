@@ -71,6 +71,8 @@ unter System/Konfiguration/Allgemein/Impressum
 *** J: app/design/frontend/default/default/template/symmetrics/imprint/legal.phtml
        Gibt Steuerinformationen aus (tax_office, tax_number, vat_id)
 *** K: Das Modul bietet eine Abwärtskompatibilität zu den alten Impressum-Aufrufen
+*** L: Falls vorher das Impressum Modul installiert war, werden die alten
+        Einstellungen des Moduls einmalig übertragen.
 
 ** TECHNICAL
 Das Modul besteht aus 3 Block-Klassen (Abstract.php, Content.php und Field.php)
@@ -85,6 +87,11 @@ Impressum-Feld. Der Befehl dazu lautet {{block type="imprint/field" value="[fiel
 Für die Ausgabe ist die Methode _toHtml() zuständig.
 
 - Symmetrics_Imprint_Block_Content ist eine leere Klasse, die nur dafür da ist die Templates wie z.B. address.phtml zu rendern.
+
+- Es gibt ein Migrationsskript, dass direkt auf das Recource Modul von
+    Config-Data zugreift, die alten Impressum Werte ausliest und in das
+    Imprint Modul einträgt. Wenn im Imprint Modul schon Einträge vorhanden
+    sind (was nicht möglich sein sollte), werden diese überschrieben.
 
 ** PROBLEMS
 Keine Probleme bekannt.
@@ -296,3 +303,10 @@ Keine Probleme bekannt.
             <hr/> {{block type="symmetrics_impressum/impressum" value="email_href"}}'
             <hr/> {{block type="symmetrics_impressum/impressum" value="imprint"}}'
             <hr/> {{block type="symmetrics_impressum/impressum" value="imprintplain"}}
+*** L: Installieren Sie symmetrics_module_impressum und tragen Sie in der
+        Systemkonfiguration Werte in die alten Impressum Felder ein.
+        Ändern Sie auch Werte auf Store oder Website Ebene.
+        Löschen Sie das Impressum Modul und installieren Sie
+        symmetrics_module_imprint.
+        Die Werte sollten 1:1 in die neuen Imprint Einstellungen
+        durch ein Migrationsskript übernommen werden.
