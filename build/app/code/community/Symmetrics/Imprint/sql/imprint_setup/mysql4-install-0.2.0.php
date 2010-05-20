@@ -29,9 +29,9 @@ $prefixNew = 'general/imprint/';
 $prefixOld = 'general/impressum/';
     
 $configMap = array (
-    'shop_name' => 'shopname',
-    'company_first' => 'company1',
-    'company_second' => 'company2',
+    'shopname' => 'shop_name',
+    'company1' => 'company_first',
+    'company2' => 'company_second',
     'street' => 'street',
     'zip' => 'zip',
     'city' => 'city',
@@ -39,25 +39,37 @@ $configMap = array (
     'fax' => 'fax',
     'email' => 'email',
     'web' => 'web',
-    'tax_number' => 'taxnumber',
-    'vat_id' => 'vatid',
+    'taxnumber' => 'tax_number',
+    'vatid' => 'vat_id',
     'court' => 'court',
-    'financial_office' => 'taxoffice',
+    'taxoffice' => 'financial_office',
     'ceo' => 'ceo',
-    'register_number' => 'hrb',
-    'bank_account' => 'bankaccount',
-    'bank_code_number' => 'bankcodenumber',
-    'bank_account_owner' => 'bankaccountowner',
-    'bank_name' => 'bankname',
+    'hrb' => 'register_number',
+    'bankaccount' => 'bank_account',
+    'bankcodenumber' => 'bank_code_number',
+    'bankaccountowner' => 'bank_account_owner',
+    'bankname' => 'bank_name',
     'swift' => 'swift',
     'iban' => 'iban',
-    'business_rules' => 'rechtlicheregelungen'
+    'rechtlicheregelungen' => 'business_rules',
 );
 
-foreach ($configMap as $newPath => $oldPath) {
-    if ($value = Mage::getStoreConfig($prefixOld . $oldPath)) {
-        $installer->setConfigData($prefixNew . $newPath, $value);
+$configCollection = Mage::getModel('core/config_data')->getCollection();
+$configCollection->addFieldToFilter('path', array('like' => $prefixOld . '%'))
+    ->load();
+
+foreach ($configCollection as $configValue) {
+    $scope = $configValue->getScope();
+    $scopeId = $configValue->getScopeId();
+    $oldPath = str_replace($prefixOld, '', $configValue->getPath());
+    $value = $configValue->getValue();
+    if (array_key_exists($oldPath, $configMap)) {
+        $newPath = $configMap[$oldPath];
+    } else {
+        $newPath = $oldPath;
     }
+    
+    $installer->setConfigData($prefixNew . $newPath, $value, $scope, $scopeId);
 }
 
 $installer->endSetup();
