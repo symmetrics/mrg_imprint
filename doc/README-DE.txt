@@ -64,7 +64,8 @@ unter System/Konfiguration/Allgemein/Impressum
        Gibt alle Kommunikationsdaten aus (telephone, fax, web, email)
 *** H: app/design/frontend/default/default/template/symmetrics/imprint/email/footer.phtml
        Gibt den formatierten Footer für E-Mails aus (shop_name, company_first,
-       company_second, street, zip, city, telephone, fax, web, email)
+       company_second, street, zip, city, telephone, fax, web, email). Die Felde 
+       aus "tax", "legal", "bank" mussen auch angezeigt werden.
 *** I: app/design/frontend/default/default/template/symmetrics/imprint/legal.phtml
        Gibt rechtliche Infos über den Shopbetreiber aus (ceo, court,
        register_number, business_rules)
@@ -243,6 +244,8 @@ Keine Probleme bekannt.
        - web
        - email
 
+       Die Felde aus "tax", "legal", "bank" mussen auch angezeigt werden.
+
 *** I: Erstellen Sie eine neue CMS-Seite oder einen statischen Block mit folgendem
        Inhalt:
 
@@ -269,39 +272,39 @@ Keine Probleme bekannt.
 *** K: Erstellen Sie eine CMS-Seite mit folgendem Inhalt und prüfen Sie, ob alle
         in der Konfiguration hinterlegten Felder richtig ausgegeben werden:
         
-            <hr/> {{block type="symmetrics_impressum/impressum" value="shopname"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="company1"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="company2"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="street"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="zip"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="city"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="telephone"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="fax"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="email"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="web"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="taxnumber"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="vatid"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="court"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="taxoffice"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="ceo"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="hrb"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="legal"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="bankaccountowner"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="bankaccount"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="bankcodenumber"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="bankname"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="swift"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="iban"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="bank"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="emailfooter"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="address"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="communication"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="legal"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="tax"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="bank"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="web_href"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="email_href"}}'
-            <hr/> {{block type="symmetrics_impressum/impressum" value="imprint"}}'
+            <hr/> {{block type="symmetrics_impressum/impressum" value="shopname"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="company1"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="company2"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="street"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="zip"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="city"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="telephone"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="fax"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="email"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="web"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="taxnumber"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="vatid"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="court"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="taxoffice"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="ceo"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="hrb"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="legal"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bankaccountowner"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bankaccount"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bankcodenumber"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bankname"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="swift"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="iban"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bank"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="emailfooter"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="address"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="communication"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="legal"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="tax"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="bank"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="web_href"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="email_href"}}
+            <hr/> {{block type="symmetrics_impressum/impressum" value="imprint"}}
             <hr/> {{block type="symmetrics_impressum/impressum" value="imprintplain"}}
 *** L: Installieren Sie symmetrics_module_impressum und tragen Sie in der
         Systemkonfiguration Werte in die alten Impressum Felder ein.
