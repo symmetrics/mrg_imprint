@@ -51,6 +51,7 @@ NOTES = ''''''
 # =============================================================================
 REQUIRES = [
     {'magento': '*', 'magento_enterprise': '*'},
+    {'symmetrics_config_texts_german': '*'},
 ]
 
 EXCLUDES = {}
