@@ -44,7 +44,7 @@ class Symmetrics_Imprint_Block_Abstract extends Mage_Core_Block_Template
      */
     public function setStoreId($storeId) 
     {
-        $this->setData(Mage::getStoreConfig('general/impressum', $storeId));
+        $this->setData(Mage::getStoreConfig('general/imprint', $storeId));
     }
 
     /**
