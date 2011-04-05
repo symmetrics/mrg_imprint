@@ -89,7 +89,7 @@ For the display the method _toHtml()  is responsible.
 - Symmetrics_Imprint_Block_Content is an empty class which is there only in order to render the templates such as for example address.phtml.
 
 - There is a migrations script that directly accesses the resource module
-    of config-data, , reads old impressum values and inserts
+    of config-data, reads old impressum values and inserts
     to imprint module. If there are already records in the imprint module
     (which should not be possible), they are overwritten.
 
@@ -126,7 +126,7 @@ No problems are known.
             - SWIFT (swift)
             - IBAN (iban)
 
-*** B: Check if the following files exist under these paths::
+*** B: Check if the following data exist under these paths::
         - app/design/frontend/default/default/template/symmetrics/imprint/address.phtml
         - app/design/frontend/default/default/template/symmetrics/imprint/bank.phtml
         - app/design/frontend/default/default/template/symmetrics/imprint/communication.phtml
@@ -135,7 +135,6 @@ No problems are known.
         - app/design/frontend/default/default/template/symmetrics/imprint/tax.phtml
 
 *** C: Create a new CMS page or a static block with the following content:
-
     
        shop_name: {{block type="imprint/field" value="shop_name"}}
        company_first: {{block type="imprint/field" value="company_first"}}
@@ -304,5 +303,5 @@ No problems are known.
     on the store or website level. Delete the impressum module
     and install symmetrics_module_imprint. 
 	The values should 1:1 be taken to the new imprint settings
-	through the migrationssckript.
+	through the migration script.
       
